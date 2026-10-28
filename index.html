@@ -154,52 +154,90 @@ footer .wrap, footer .footer-inner{
   object-position:center!important;
 }
 
-/* Original Abhiruchi cinematic experience: progressive enhancement */
-.cinema{position:relative;min-height:92svh;overflow:hidden;isolation:isolate;background:#170b08;color:#fff;display:grid;place-items:center}
-.cinema-bg{position:absolute;inset:-8%;background:linear-gradient(90deg,rgba(21,7,3,.88),rgba(21,7,3,.26)),url('assets/meals.jpg') center/cover;transform:scale(1.1);will-change:transform}
-.cinema:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 48%,transparent 10%,#170b0859 75%);pointer-events:none}
-.cinema-inner{position:relative;z-index:2;width:min(1200px,92%);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4vw;padding:100px 0}
-.cinema-eyebrow{color:#f5d17b;letter-spacing:.28em;font-weight:800;text-transform:uppercase;font-size:12px}
-.cinema h1{font:clamp(50px,7vw,112px)/.95 Georgia,serif;letter-spacing:-.05em;margin:20px 0;text-wrap:balance}
-.cinema h1 em{color:#ffd66c;font-style:italic}
-.cinema-copy{font-size:clamp(16px,1.6vw,21px);line-height:1.65;max-width:520px;color:#fcebdc}
-.cinema-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.cinema-actions a{border-radius:50px;padding:15px 25px;font-weight:800;background:#ffd66c;color:#2d140a;transition:transform .25s,box-shadow .25s}
-.cinema-actions a:nth-child(2){background:transparent;color:#fff;border:1px solid #fff8}
-.cinema-actions a:hover{transform:translateY(-4px);box-shadow:0 12px 30px #0005}
-.cinema-stage{position:relative;min-height:490px;perspective:1100px;transform-style:preserve-3d}
-.cinema-dish{position:absolute;top:10%;left:12%;width:76%;aspect-ratio:1;border-radius:50%;object-fit:cover;border:13px solid #f9e9c9;box-shadow:0 35px 90px #000b,0 0 0 2px #d9a853;animation:ab-float 6s ease-in-out infinite;will-change:transform}
-.cinema-orbit{position:absolute;inset:1%;border:1px solid #ffe1a16e;border-radius:50%;transform:rotate(-24deg) scaleY(.75);pointer-events:none}
-.cinema-orbit:before,.cinema-orbit:after{content:"✦";position:absolute;color:#ffcf67;font-size:35px;left:10%;top:13%}.cinema-orbit:after{left:auto;top:auto;right:9%;bottom:10%;font-size:24px}
-.cinema-label{position:absolute;bottom:7%;right:0;background:#fff6df;color:#47220f;border-radius:18px;padding:14px 19px;box-shadow:0 12px 40px #0006;transform:rotate(5deg);font:800 17px Georgia,serif}
-.cinema-scroll{position:absolute;z-index:3;bottom:22px;left:50%;transform:translateX(-50%);letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:#ffe7bb}
-@keyframes ab-float{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-22px) rotate(4deg)}}
-.cat,.popular-card,.pop-card,.card{transition:transform .35s ease,box-shadow .35s ease;transform-style:preserve-3d}
-.cat:hover,.popular-card:hover,.pop-card:hover{transform:translateY(-8px) rotateX(3deg);box-shadow:0 18px 35px #3c25052b}
-.ab-reveal{opacity:0;transform:translateY(34px);transition:opacity .75s ease,transform .75s ease}.ab-reveal.ab-visible{opacity:1;transform:translateY(0)}
-@media(max-width:800px){.cinema{min-height:unset}.cinema-inner{grid-template-columns:1fr;padding:70px 0 75px;gap:8px}.cinema h1{font-size:clamp(49px,12vw,76px)}.cinema-stage{min-height:310px;width:min(390px,90%);margin:auto}.cinema-dish{border-width:9px}.cinema-label{font-size:14px}.cinema-scroll{bottom:12px}}
-@media(prefers-reduced-motion:reduce){.cinema-dish{animation:none}.ab-reveal{opacity:1;transform:none;transition:none}.cinema-bg{transform:none!important}.cat,.popular-card,.pop-card{transition:none}}
+/* v3: polished, compact 3D touches; original bilingual menu retained */
+.hero{display:none!important}
+.ab-v3-hero{height:clamp(450px,49vw,630px);position:relative;isolation:isolate;display:flex;align-items:center;background:#160d0a;overflow:hidden}
+.ab-v3-hero-photo{position:absolute;inset:-4%;z-index:-2;background:url('assets/cinematic-dosa.webp') center 52%/cover;transform:scale(1.03);transition:transform 1.2s ease;will-change:transform}
+.ab-v3-hero:hover .ab-v3-hero-photo{transform:scale(1.08)}
+.ab-v3-hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#130b09f5 0%,#130b09d9 39%,#130b0947 78%,#130b0922)}
+.ab-v3-copy{max-width:680px;padding:50px 0;margin-left:clamp(24px,6vw,110px);color:#fff6e7}
+.ab-v3-kicker{color:#ffd17a;letter-spacing:.18em;font-weight:800;font-size:12px;text-transform:uppercase}
+.ab-v3-copy h1{font:italic 700 clamp(37px,4.2vw,61px)/1.1 Georgia,serif;letter-spacing:-.025em;margin:22px 0;color:#fff0cd}
+.ab-v3-copy h1 em{color:#f8c55e}
+.ab-v3-copy p{font:clamp(18px,1.7vw,24px)/1.45 Georgia,serif;max-width:510px;margin:0 0 28px}
+.ab-v3-hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.ab-v3-hero-actions a{display:inline-flex;align-items:center;gap:15px;border-radius:35px;padding:15px 22px;background:#f8c85e;color:#29150e;font-weight:800;transition:transform .25s,box-shadow .25s}
+.ab-v3-hero-actions a:last-child{background:#1d0e0ba6;color:#ffe5b3;border:1px solid #f5c86b}
+.ab-v3-hero-actions a:hover{transform:translateY(-4px);box-shadow:0 10px 25px #0005}
+.ab-v3-caption{margin-top:28px;color:#f4d9ac;font-size:13px}
+.ab-v3-highlights{background:#fff8e8;padding:55px clamp(18px,4vw,60px) 65px}
+.ab-v3-intro{text-align:center;margin-bottom:28px}
+.ab-v3-intro>span{font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:#a2692e;font-weight:800}
+.ab-v3-intro h2{font:700 clamp(28px,3.4vw,45px) Georgia,serif;color:#2e251b;margin:10px 0}
+.ab-v3-intro p{color:#765c46;margin:0}
+.ab-v3-feature-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;perspective:1400px}
+.ab-v3-feature{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 9px 27px #6b3b1918;border:1px solid #e9d8bb;display:block;color:#322117;transform:translateY(0) rotateY(0);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.ab-v3-feature:hover{transform:translateY(-12px) rotateY(-4deg) rotateX(2deg);box-shadow:0 22px 42px #5832163d}
+.ab-v3-img{height:clamp(170px,20vw,265px);overflow:hidden}
+.ab-v3-img img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease;display:block}
+.ab-v3-feature:hover img{transform:scale(1.08) translateX(8px)}
+.ab-v3-feature-label{display:flex;flex-direction:column;gap:5px;padding:18px 20px}
+.ab-v3-feature-label small{color:#a76928;text-transform:uppercase;font-weight:800;letter-spacing:.08em}
+.ab-v3-feature-label strong{font:700 clamp(21px,2vw,29px) Georgia,serif}
+.ab-v3-feature-label span{color:#775039;font-weight:600}
+.top{background:#32170e!important;box-shadow:0 2px 15px #0002!important}
+.categories .cat,.popular-card,.menu-grid>.menu-card,.menu-grid>.menu-box,.menu-grid>.box{transition:transform .3s ease,box-shadow .3s ease}
+.categories .cat:hover,.popular-card:hover,.menu-grid>.menu-card:hover,.menu-grid>.menu-box:hover,.menu-grid>.box:hover{transform:translateY(-6px);box-shadow:0 14px 30px #39200c24}
+.menu-grid{align-items:start!important}
+.menu-grid>div{align-self:start!important}
+.menu .item{transition:background .2s ease,transform .2s ease}
+.menu .item:hover{background:#fffaf0;transform:translateX(3px)}
+.menu .addbtn{transition:transform .2s ease,box-shadow .2s ease}
+.menu .addbtn:hover{transform:scale(1.13);box-shadow:0 5px 15px #b90a164a}
+html{scroll-padding-top:100px}
+@media(max-width:850px){.ab-v3-hero{height:580px;align-items:end}.ab-v3-hero-photo{background-position:61% center}.ab-v3-hero-shade{background:linear-gradient(0deg,#160d0af8 0%,#160d0ac9 52%,#160d0a30 100%)}.ab-v3-copy{margin:0 22px;padding:0 0 42px}.ab-v3-copy h1{font-size:clamp(35px,8vw,51px)}.ab-v3-feature-grid{grid-template-columns:1fr}.ab-v3-img{height:240px}}
+@media(prefers-reduced-motion:reduce){.ab-v3-hero-photo,.ab-v3-feature,.ab-v3-img img,.menu .item,.menu .addbtn{transition:none!important}}
+
+/* Cream & Forest Green — menu-only theme */
+.menu{background:#fffdf8!important}
+.menu-title h2{color:#214b34!important}
+.menu-title h2 span{color:#214b34!important}
+.menu-title p{color:#685b46!important}
+.menu-grid .card,.menu-grid .card.pink,.menu-grid .card.green,.menu-grid .card.blue{background:#fff8eb!important;border:1px solid #e6d6b9!important;box-shadow:0 5px 18px rgba(37,65,43,.07)!important}
+.menu-grid .card h3,.menu-grid .card.pink h3,.menu-grid .card.green h3,.menu-grid .card.blue h3{background:#214b34!important;color:#fff6dc!important;border-bottom:2px solid #c79645!important}
+.menu-grid .item{border-bottom-color:#e7d9c1!important;color:#2d281f!important}
+.menu-grid .item .price{color:#214b34!important}
+.menu-grid .item .add,.menu-grid .item button{color:inherit}
+.menu-grid .item .addbtn{background:#d60014!important;color:white!important}
+.menu-grid .card .items{background:#fff8eb!important}
+.menu-grid .card .item:hover{background:#fff2d9!important}
+
 </style></head><body>
 <header class="top"><div class="wrap nav"><div class="logo"><div class="logo-mark">♨️</div><div class="brand">New <b>Abhiruchi</b><br>Tiffins & Meals</div></div><nav class="links"><a href="#home">Home</a><a href="#tiffins">Tiffins</a><a href="#dosas">Dosas</a><a href="#meals">Meals</a><a href="#curries">Curries</a><a href="#sweets">Sweets & Snacks</a><a href="#dairy">Fresh Dairy</a><a href="#location">Location</a><a class="cart-top" href="#cartPanel" id="cartTop">🛒 Cart <span id="cartCount">0</span></a></nav></div></header>
 <main id="home">
-<section class="cinema" aria-label="Discover New Abhiruchi">
- <div class="cinema-bg" aria-hidden="true"></div>
- <div class="cinema-inner">
-  <div class="cinema-text">
-   <div class="cinema-eyebrow">From our kitchen, with love · Andhra Pradesh</div>
-   <h1>A taste of <em>home.</em></h1>
-   <p class="cinema-copy">Hot idlis. Golden ghee. Bold Andhra flavors. Every meal tells a story — and yours begins here.</p>
-   <div class="cinema-actions"><a href="#tiffins">Explore our menu ↓</a><a href="tel:+918801689111">Call to order ☎</a></div>
+<section class="ab-v3-hero" id="experience" aria-label="New Abhiruchi signature food">
+  <div class="ab-v3-hero-photo"></div>
+  <div class="ab-v3-hero-shade"></div>
+  <div class="ab-v3-copy">
+    <span class="ab-v3-kicker">Authentic Andhra · Freshly made every day</span>
+    <h1>From Our Kitchen<br><em>To Your Heart.</em></h1>
+    <p>Aritaku Ghee Karam Idly &amp; Fish Curry — Our Specialties.</p>
+    <div class="ab-v3-hero-actions">
+      <a href="#tiffins">Explore Full Menu <span>↓</span></a>
+      <a href="tel:+918801689111">☎ Call 8801689111</a>
+    </div>
+    <div class="ab-v3-caption">7:00 AM – 9:30 PM · English + తెలుగు</div>
   </div>
-  <div class="cinema-stage" aria-label="Delicious Andhra food">
-   <div class="cinema-orbit" aria-hidden="true"></div>
-   <img class="cinema-dish" src="assets/popular-aritaku-idli.jpg" alt="Aritaku Idli, a New Abhiruchi specialty" fetchpriority="high">
-   <div class="cinema-label">Aritaku Ghee Garam Idly ✦</div>
-  </div>
- </div>
- <a class="cinema-scroll" href="#popular">Scroll to discover ↓</a>
 </section>
-<section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Authentic Andhra</div><h1>Tiffins & Meals</h1><div class="special">Aritaku Ghee Garam Idly<br>& Fish Curry - Our Specialties</div></div></div><div class="tagline">Fresh<br>Tasty<br>Homely Food<br>Every Day</div><div class="features"><div class="feature"><i>🌿</i>Fresh<br>Ingredients</div><div class="feature"><i>🏠</i>Homely<br>Taste</div><div class="feature"><i>🍲</i>Wide Variety<br>of Tiffins, Dosas & Meals</div><div class="feature"><i>₹</i>Affordable<br>Prices</div></div><div class="hero-actions"><a class="hero-btn call" href="tel:+918801689111">☎ Call to Order<br>8801689111</a><a class="hero-btn map" target="_blank" rel="noopener" href="https://maps.app.goo.gl/AZSiE7xexVKewxK49?g_st=iw">📍 Get Directions<br><small>View on Google Maps</small></a></div></section>
+<section class="ab-v3-highlights" aria-label="Featured restaurant specialties">
+  <div class="ab-v3-intro"><span>Our specialties</span><h2>Made fresh. Served with love.</h2><p>Discover our favorites, then explore the full menu below.</p></div>
+  <div class="ab-v3-feature-grid">
+    <a href="#tiffins" class="ab-v3-feature"><div class="ab-v3-img"><img src="assets/cinematic-ghee-idli.webp" alt="Ghee pouring onto fresh idlis" loading="lazy"></div><div class="ab-v3-feature-label"><small>01 · Our specialty</small><strong>Ghee Karam Idly</strong><span lang="te">నెయ్యి ఇడ్లీ</span></div></a>
+    <a href="#dosas" class="ab-v3-feature"><div class="ab-v3-img"><img src="assets/cinematic-dosa.webp" alt="Crispy golden dosa with chutneys" loading="lazy"></div><div class="ab-v3-feature-label"><small>02 · From the tawa</small><strong>Golden Dosa</strong><span lang="te">దోశ</span></div></a>
+    <a href="#meals" class="ab-v3-feature"><div class="ab-v3-img"><img src="assets/meal-card.jpg" alt="Andhra meals with rice and curries" loading="lazy"></div><div class="ab-v3-feature-label"><small>03 · Homely flavors</small><strong>Andhra Meals</strong><span lang="te">ఆంధ్ర భోజనం</span></div></a>
+  </div>
+</section>
+<section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Authentic Andhra</div><h1>Tiffins & Meals</h1><div class="special">Aritaku Ghee Karam Idly<br>& Fish Curry - Our Specialties</div></div></div><div class="tagline">Fresh<br>Tasty<br>Homely Food<br>Every Day</div><div class="features"><div class="feature"><i>🌿</i>Fresh<br>Ingredients</div><div class="feature"><i>🏠</i>Homely<br>Taste</div><div class="feature"><i>🍲</i>Wide Variety<br>of Tiffins, Dosas & Meals</div><div class="feature"><i>₹</i>Affordable<br>Prices</div></div><div class="hero-actions"><a class="hero-btn call" href="tel:+918801689111">☎ Call to Order<br>8801689111</a><a class="hero-btn map" target="_blank" rel="noopener" href="https://maps.app.goo.gl/AZSiE7xexVKewxK49?g_st=iw">📍 Get Directions<br><small>View on Google Maps</small></a></div></section>
 <section class="categories"><a class="cat" href="#tiffins"><img src="assets/tiffins.jpg" alt="Idli and chutneys"><span>Tiffins</span></a><a class="cat" href="#dosas"><img src="assets/dosas.jpg" alt="Dosa"><span>Dosas</span></a><a class="cat" href="#meals"><img src="assets/meals.jpg" alt="Andhra meals"><span>Meals</span></a><a class="cat" href="#curries"><img src="assets/curries.jpg" alt="Curry"><span>Curries</span></a><a class="cat" href="#sweets"><img src="assets/sweets.jpg" alt="Sweets and snacks"><span>Sweets & Snacks</span></a><a class="cat" href="#dairy"><img src="assets/dairy.jpg" alt="Milk and curd"><span>Fresh Dairy</span></a></section>
 <section class="popular" id="popular">
 <h2>Popular Tiffins</h2>
@@ -221,7 +259,7 @@ footer .wrap, footer .footer-inner{
 <div class="card pink" id="dosas"><h3>🥞 Dosa Varieties</h3><div class="items"><div class="item" data-k="9" data-name="Pesarattu" data-price="50"><span class="item-name">Pesarattu<span class="item-te" lang="te">పెసరట్టు</span></span><span class="price">₹50</span><span class="qty" id="qty9"><button class="addbtn" data-k="9" data-d="1" aria-label="Add Pesarattu">+</button></span></div><div class="item" data-k="10" data-name="Karam Dosa" data-price="50"><span class="item-name">Karam Dosa<span class="item-te" lang="te">కారం దోశ</span></span><span class="price">₹50</span><span class="qty" id="qty10"><button class="addbtn" data-k="10" data-d="1" aria-label="Add Karam Dosa">+</button></span></div><div class="item" data-k="11" data-name="Masala Dosa" data-price="60"><span class="item-name">Masala Dosa<span class="item-te" lang="te">మసాల దోశ</span></span><span class="price">₹60</span><span class="qty" id="qty11"><button class="addbtn" data-k="11" data-d="1" aria-label="Add Masala Dosa">+</button></span></div><div class="item" data-k="12" data-name="Uttapam" data-price="60"><span class="item-name">Uttapam<span class="item-te" lang="te">ఊతప్పం</span></span><span class="price">₹60</span><span class="qty" id="qty12"><button class="addbtn" data-k="12" data-d="1" aria-label="Add Uttapam">+</button></span></div><div class="item" data-k="13" data-name="Egg Chapati" data-price="50"><span class="item-name">Egg Chapati<span class="item-te" lang="te">ఎగ్ చపాతి</span></span><span class="price">₹50</span><span class="qty" id="qty13"><button class="addbtn" data-k="13" data-d="1" aria-label="Add Egg Chapati">+</button></span></div><div class="item" data-k="14" data-name="Egg Dosa" data-price="60"><span class="item-name">Egg Dosa<span class="item-te" lang="te">ఎగ్ దోశ</span></span><span class="price">₹60</span><span class="qty" id="qty14"><button class="addbtn" data-k="14" data-d="1" aria-label="Add Egg Dosa">+</button></span></div><div class="item" data-k="15" data-name="Onion Dosa" data-price="60"><span class="item-name">Onion Dosa<span class="item-te" lang="te">ఉల్లి దోశ</span></span><span class="price">₹60</span><span class="qty" id="qty15"><button class="addbtn" data-k="15" data-d="1" aria-label="Add Onion Dosa">+</button></span></div><div class="item" data-k="16" data-name="Ragi Dosa" data-price="60"><span class="item-name">Ragi Dosa<span class="item-te" lang="te">రాగి దోశ</span></span><span class="price">₹60</span><span class="qty" id="qty16"><button class="addbtn" data-k="16" data-d="1" aria-label="Add Ragi Dosa">+</button></span></div><div class="item" data-k="17" data-name="Set Dosa (2)" data-price="60"><span class="item-name">Set Dosa (2)<span class="item-te" lang="te">సెట్ దోశ</span></span><span class="price">₹60</span><span class="qty" id="qty17"><button class="addbtn" data-k="17" data-d="1" aria-label="Add Set Dosa (2)">+</button></span></div><div class="item" data-k="18" data-name="Chapati (2)" data-price="60"><span class="item-name">Chapati (2)<span class="item-te" lang="te">చపాతి</span></span><span class="price">₹60</span><span class="qty" id="qty18"><button class="addbtn" data-k="18" data-d="1" aria-label="Add Chapati (2)">+</button></span></div><div class="item" data-k="19" data-name="Parotta (2)" data-price="60"><span class="item-name">Parotta (2)<span class="item-te" lang="te">పరోటా</span></span><span class="price">₹60</span><span class="qty" id="qty19"><button class="addbtn" data-k="19" data-d="1" aria-label="Add Parotta (2)">+</button></span></div><div class="item" data-k="20" data-name="Double Egg Dosa" data-price="70"><span class="item-name">Double Egg Dosa<span class="item-te" lang="te">డబుల్ ఎగ్ దోశ</span></span><span class="price">₹70</span><span class="qty" id="qty20"><button class="addbtn" data-k="20" data-d="1" aria-label="Add Double Egg Dosa">+</button></span></div><div class="item" data-k="21" data-name="Butter Dosa" data-price="70"><span class="item-name">Butter Dosa<span class="item-te" lang="te">బటర్ దోశ</span></span><span class="price">₹70</span><span class="qty" id="qty21"><button class="addbtn" data-k="21" data-d="1" aria-label="Add Butter Dosa">+</button></span></div><div class="item" data-k="22" data-name="Ragi Egg Dosa" data-price="70"><span class="item-name">Ragi Egg Dosa<span class="item-te" lang="te">రాగి ఎగ్ దోశ</span></span><span class="price">₹70</span><span class="qty" id="qty22"><button class="addbtn" data-k="22" data-d="1" aria-label="Add Ragi Egg Dosa">+</button></span></div><div class="item" data-k="23" data-name="Paneer Dosa" data-price="80"><span class="item-name">Paneer Dosa<span class="item-te" lang="te">పన్నీర్ దోశ</span></span><span class="price">₹80</span><span class="qty" id="qty23"><button class="addbtn" data-k="23" data-d="1" aria-label="Add Paneer Dosa">+</button></span></div><div class="item" data-k="24" data-name="Ghee Karam Dosa" data-price="80"><span class="item-name">Ghee Karam Dosa<span class="item-te" lang="te">ఘీ కారం దోశ</span></span><span class="price">₹80</span><span class="qty" id="qty24"><button class="addbtn" data-k="24" data-d="1" aria-label="Add Ghee Karam Dosa">+</button></span></div></div><img class="card-img" src="assets/dosas.jpg" alt="Dosa"></div>
 <div class="card green" id="meals"><h3>🍛 Meals</h3><div class="items"><div class="item" data-k="25" data-name="Full Meals (Dine In)" data-price="130"><span class="item-name">Full Meals (Dine In)<span class="item-te" lang="te">ఫుల్ మీల్స్ (డైన్ ఇన్)</span></span><span class="price">₹130</span><span class="qty" id="qty25"><button class="addbtn" data-k="25" data-d="1" aria-label="Add Full Meals (Dine In)">+</button></span></div><div class="item" data-k="26" data-name="Full Meals (Parcel)" data-price="140"><span class="item-name">Full Meals (Parcel)<span class="item-te" lang="te">ఫుల్ మీల్స్ (పార్సెల్)</span></span><span class="price">₹140</span><span class="qty" id="qty26"><button class="addbtn" data-k="26" data-d="1" aria-label="Add Full Meals (Parcel)">+</button></span></div><div class="item" data-k="27" data-name="Half Meals (Parcel)" data-price="100"><span class="item-name">Half Meals (Parcel)<span class="item-te" lang="te">హాఫ్ మీల్స్ (పార్సెల్)</span></span><span class="price">₹100</span><span class="qty" id="qty27"><button class="addbtn" data-k="27" data-d="1" aria-label="Add Half Meals (Parcel)">+</button></span></div></div><img class="card-img" src="assets/meal-card.jpg" alt="Full meals"></div>
 <div class="stack"><div class="card blue" id="curries"><h3>🥘 Curries (Separate)</h3><div class="items"><div class="item" data-k="28" data-name="Any Veg Curry" data-price="30"><span class="item-name">Any Veg Curry<span class="item-te" lang="te">ఏదైనా వెజ్ కర్రీ</span></span><span class="price">₹30</span><span class="qty" id="qty28"><button class="addbtn" data-k="28" data-d="1" aria-label="Add Any Veg Curry">+</button></span></div><div class="item" data-k="29" data-name="Egg Curry" data-price="35"><span class="item-name">Egg Curry<span class="item-te" lang="te">ఎగ్ కర్రీ</span></span><span class="price">₹35</span><span class="qty" id="qty29"><button class="addbtn" data-k="29" data-d="1" aria-label="Add Egg Curry">+</button></span></div><div class="item" data-k="30" data-name="Chicken Curry (Half)" data-price="120"><span class="item-name">Chicken Curry (Half)<span class="item-te" lang="te">చికెన్ కర్రీ (హాఫ్)</span></span><span class="price">₹120</span><span class="qty" id="qty30"><button class="addbtn" data-k="30" data-d="1" aria-label="Add Chicken Curry (Half)">+</button></span></div><div class="item" data-k="31" data-name="Chicken Curry (Full)" data-price="240"><span class="item-name">Chicken Curry (Full)<span class="item-te" lang="te">చికెన్ కర్రీ (ఫుల్)</span></span><span class="price">₹240</span><span class="qty" id="qty31"><button class="addbtn" data-k="31" data-d="1" aria-label="Add Chicken Curry (Full)">+</button></span></div><div class="item" data-k="32" data-name="Fish Curry (1 Piece)" data-price="70"><span class="item-name">Fish Curry (1 Piece)<span class="item-te" lang="te">ఫిష్ కర్రీ (1 పీస్)</span></span><span class="price">₹70</span><span class="qty" id="qty32"><button class="addbtn" data-k="32" data-d="1" aria-label="Add Fish Curry (1 Piece)">+</button></span></div></div><img class="card-img" src="assets/curry-card-clean.jpg" alt="Fish curry"></div><div class="card blue"><h3>🥛 Drinks</h3><div class="items"><div class="item" data-k="33" data-name="Sweet Lassi" data-price="30"><span class="item-name">Sweet Lassi<span class="item-te" lang="te">స్వీట్ లస్సీ</span></span><span class="price">₹30</span><span class="qty" id="qty33"><button class="addbtn" data-k="33" data-d="1" aria-label="Add Sweet Lassi">+</button></span></div></div></div></div>
-<div class="stack"><div class="card pink" id="sweets"><h3>🍬 Sweets & Snacks</h3><div class="items"><div class="item" data-k="34" data-name="Nuvvula Laddu" data-price="25"><span class="item-name">Nuvvula Laddu<span class="item-te" lang="te">నువ్వుల లడ్డు</span></span><span class="price">₹25</span><span class="qty" id="qty34"><button class="addbtn" data-k="34" data-d="1" aria-label="Add Nuvvula Laddu">+</button></span></div><div class="item" data-k="35" data-name="Minapa Sunnundalu" data-price="25"><span class="item-name">Minapa Sunnundalu<span class="item-te" lang="te">మినప సున్నుండలు</span></span><span class="price">₹25</span><span class="qty" id="qty35"><button class="addbtn" data-k="35" data-d="1" aria-label="Add Minapa Sunnundalu">+</button></span></div><div class="item" data-k="36" data-name="Hot Kara's (Pack)" data-price="75"><span class="item-name">Hot Kara's (Pack)<span class="item-te" lang="te">హాట్ కారా (ప్యాక్)</span></span><span class="price">₹75</span><span class="qty" id="qty36"><button class="addbtn" data-k="36" data-d="1" aria-label="Add Hot Kara's (Pack)">+</button></span></div></div><img class="card-img" src="assets/sweets.jpg" alt="Sweets and hot kara"></div><div class="card green" id="dairy"><h3>🥛 Fresh Dairy Products</h3><div class="items"><div class="item" data-k="37" data-name="Fresh Milk (1 Liter)" data-price="100"><span class="item-name">Fresh Milk (1 Liter)<span class="item-te" lang="te">తాజా పాలు (1 లీటర్)</span></span><span class="price">₹100</span><span class="qty" id="qty37"><button class="addbtn" data-k="37" data-d="1" aria-label="Add Fresh Milk (1 Liter)">+</button></span></div><div class="item" data-k="38" data-name="Curd (½ kg)" data-price="60"><span class="item-name">Curd (½ kg)<span class="item-te" lang="te">పెరుగు (½ కిలో)</span></span><span class="price">₹60</span><span class="qty" id="qty38"><button class="addbtn" data-k="38" data-d="1" aria-label="Add Curd (½ kg)">+</button></span></div><div class="item" data-k="39" data-name="Curd (300 grams)" data-price="30"><span class="item-name">Curd (300 grams)<span class="item-te" lang="te">పెరుగు (300 గ్రాములు)</span></span><span class="price">₹30</span><span class="qty" id="qty39"><button class="addbtn" data-k="39" data-d="1" aria-label="Add Curd (300 grams)">+</button></span></div><div class="item" data-k="40" data-name="Ghee (1 kg)" data-price="1200"><span class="item-name">Ghee (1 kg)<span class="item-te" lang="te">నెయ్యి (1 కిలో)</span></span><span class="price">₹1,200</span><span class="qty" id="qty40"><button class="addbtn" data-k="40" data-d="1" aria-label="Add Ghee (1 kg)">+</button></span></div></div><div class="delivery">🚚 Home Delivery Available<br>for Milk Only</div></div></div>
+<div class="stack"><div class="card pink" id="sweets"><h3>🍬 Sweets & Snacks</h3><div class="items"><div class="item" data-k="34" data-name="Nuvvula Laddu" data-price="25"><span class="item-name">Nuvvula Laddu<span class="item-te" lang="te">నువ్వుల లడ్డు</span></span><span class="price">₹25</span><span class="qty" id="qty34"><button class="addbtn" data-k="34" data-d="1" aria-label="Add Nuvvula Laddu">+</button></span></div><div class="item" data-k="41" data-name="Rava Laddu" data-price="20"><span class="item-name">Rava Laddu<span class="item-te" lang="te">రవ్వ లడ్డు</span></span><span class="price">₹20</span><span class="qty" id="qty41"><button class="addbtn" data-k="41" data-d="1" aria-label="Add Rava Laddu">+</button></span></div><div class="item" data-k="35" data-name="Minapa Sunnundalu" data-price="25"><span class="item-name">Minapa Sunnundalu<span class="item-te" lang="te">మినప సున్నుండలు</span></span><span class="price">₹25</span><span class="qty" id="qty35"><button class="addbtn" data-k="35" data-d="1" aria-label="Add Minapa Sunnundalu">+</button></span></div><div class="item" data-k="36" data-name="Hot Kara's (Pack)" data-price="75"><span class="item-name">Hot Kara's (Pack)<span class="item-te" lang="te">హాట్ కారా (ప్యాక్)</span></span><span class="price">₹75</span><span class="qty" id="qty36"><button class="addbtn" data-k="36" data-d="1" aria-label="Add Hot Kara's (Pack)">+</button></span></div></div><img class="card-img" src="assets/sweets.jpg" alt="Sweets and hot kara"></div><div class="card green" id="dairy"><h3>🥛 Fresh Dairy Products</h3><div class="items"><div class="item" data-k="37" data-name="Fresh Milk (1 Liter)" data-price="100"><span class="item-name">Fresh Milk (1 Liter)<span class="item-te" lang="te">తాజా పాలు (1 లీటర్)</span></span><span class="price">₹100</span><span class="qty" id="qty37"><button class="addbtn" data-k="37" data-d="1" aria-label="Add Fresh Milk (1 Liter)">+</button></span></div><div class="item" data-k="38" data-name="Curd (½ kg)" data-price="60"><span class="item-name">Curd (½ kg)<span class="item-te" lang="te">పెరుగు (½ కిలో)</span></span><span class="price">₹60</span><span class="qty" id="qty38"><button class="addbtn" data-k="38" data-d="1" aria-label="Add Curd (½ kg)">+</button></span></div><div class="item" data-k="39" data-name="Curd (300 grams)" data-price="30"><span class="item-name">Curd (300 grams)<span class="item-te" lang="te">పెరుగు (300 గ్రాములు)</span></span><span class="price">₹30</span><span class="qty" id="qty39"><button class="addbtn" data-k="39" data-d="1" aria-label="Add Curd (300 grams)">+</button></span></div><div class="item" data-k="40" data-name="Ghee (1 kg)" data-price="1200"><span class="item-name">Ghee (1 kg)<span class="item-te" lang="te">నెయ్యి (1 కిలో)</span></span><span class="price">₹1,200</span><span class="qty" id="qty40"><button class="addbtn" data-k="40" data-d="1" aria-label="Add Ghee (1 kg)">+</button></span></div></div><div class="delivery">🚚 Home Delivery Available<br>for Milk Only</div></div></div>
 </div></section>
 <section class="contact" id="location"><div class="contact-grid"><div class="panel"><h3>Visit New Abhiruchi</h3><p><b>Address:</b><br>17-8 Road, Bhagyanagar Colony, Padmaja Nagar, Tadigadapa, Poranki, Kanuru, Andhra Pradesh 521134, India</p><p><b>Opening Hours:</b> 7:00 AM – 9:30 PM</p></div><div class="panel"><h3>Call & Order</h3><p>Choose your favorites and call us directly to place your order.</p><p><b>Phone:</b> 8801689111</p></div></div></section></main>
 <aside class="cart-panel" id="cartPanel">
@@ -280,27 +318,4 @@ footer .wrap, footer .footer-inner{
 })();
 </script>
 
-
-<script>
-(function(){
-  var scene=document.querySelector('.cinema'),bg=document.querySelector('.cinema-bg'),dish=document.querySelector('.cinema-dish');
-  if(!scene)return;
-  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reduced){
-    var pending=false;
-    function animate(){
-      var rect=scene.getBoundingClientRect(),p=Math.max(0,Math.min(1,-rect.top/Math.max(1,rect.height)));
-      if(bg)bg.style.transform='translate3d(0,'+(p*75)+'px,0) scale(1.12)';
-      if(dish)dish.style.filter='saturate('+(1+p*.15)+')';
-      pending=false;
-    }
-    window.addEventListener('scroll',function(){if(!pending){pending=true;requestAnimationFrame(animate)}},{passive:true});
-    animate();
-  }
-  if('IntersectionObserver' in window&&!reduced){
-    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ab-visible');io.unobserve(e.target)}})},{threshold:.07});
-    document.querySelectorAll('.categories,.popular,.menu-title').forEach(function(el){el.classList.add('ab-reveal');io.observe(el)});
-  }
-})();
-</script>
 </body></html>
