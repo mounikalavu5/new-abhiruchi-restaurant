@@ -179,6 +179,25 @@ footer .wrap, footer .footer-inner{
 .ab-reveal{opacity:0;transform:translateY(34px);transition:opacity .75s ease,transform .75s ease}.ab-reveal.ab-visible{opacity:1;transform:translateY(0)}
 @media(max-width:800px){.cinema{min-height:unset}.cinema-inner{grid-template-columns:1fr;padding:70px 0 75px;gap:8px}.cinema h1{font-size:clamp(49px,12vw,76px)}.cinema-stage{min-height:310px;width:min(390px,90%);margin:auto}.cinema-dish{border-width:9px}.cinema-label{font-size:14px}.cinema-scroll{bottom:12px}}
 @media(prefers-reduced-motion:reduce){.cinema-dish{animation:none}.ab-reveal{opacity:1;transform:none;transition:none}.cinema-bg{transform:none!important}.cat,.popular-card,.pop-card{transition:none}}
+
+/* Cinematic preview v2: clean editorial layout, without duplicated hero */
+body{background:#160b07}
+.top{background:#1c0c06;box-shadow:none;border-bottom:1px solid #f6cf7650}
+.nav{height:76px}.links a:first-child{background:#f4bc4e}.brand b{color:#f6c665}
+.cinema{min-height:calc(100svh - 76px);background:#1b0d07}
+.cinema-bg{background:linear-gradient(90deg,#170a06 2%,#170a06ee 34%,#170a0650 74%,#170a0699),url('assets/hero-reference.png') center/cover;filter:none}
+.cinema:after{background:radial-gradient(circle at 76% 50%,transparent 10%,#170b0833 80%)}
+.cinema-inner{width:min(1320px,92%);grid-template-columns:1fr 1.05fr}
+.cinema h1{font-size:clamp(53px,6.8vw,102px);color:#fff3d6}
+.cinema h1 em{color:#f5bf56}
+.cinema-dish{width:83%;left:8%;top:5%;border:0;border-radius:45% 55% 49% 51%;box-shadow:0 35px 100px #0009;mask-image:radial-gradient(ellipse,#000 49%,transparent 73%);-webkit-mask-image:radial-gradient(ellipse,#000 49%,transparent 73%)}
+.cinema-orbit{border-color:#f6c76a33;transform:rotate(-22deg) scaleY(.84)}
+.cinema-label{right:4%;bottom:10%;background:#f8dba0;color:#381b0b}
+.cinema-actions a{background:#f7c457}
+.cinema-actions a:hover{background:#ffe0a1}
+.hero{display:none!important}
+.categories{padding-top:22px}
+@media(max-width:800px){.cinema-inner{grid-template-columns:1fr}.cinema-bg{background-position:center}.cinema-stage{min-height:280px}.cinema-dish{width:78%;left:11%}.top .nav{height:auto;min-height:70px}}
 </style></head><body>
 <header class="top"><div class="wrap nav"><div class="logo"><div class="logo-mark">♨️</div><div class="brand">New <b>Abhiruchi</b><br>Tiffins & Meals</div></div><nav class="links"><a href="#home">Home</a><a href="#tiffins">Tiffins</a><a href="#dosas">Dosas</a><a href="#meals">Meals</a><a href="#curries">Curries</a><a href="#sweets">Sweets & Snacks</a><a href="#dairy">Fresh Dairy</a><a href="#location">Location</a><a class="cart-top" href="#cartPanel" id="cartTop">🛒 Cart <span id="cartCount">0</span></a></nav></div></header>
 <main id="home">
