@@ -212,6 +212,15 @@ html{scroll-padding-top:100px}
 .menu-grid .card .items{background:#fff8eb!important}
 .menu-grid .card .item:hover{background:#fff2d9!important}
 
+
+/* Mobile Popular Tiffins: equal-size cards and photos */
+@media (max-width:650px){
+  .popular-grid{display:flex!important;flex-wrap:nowrap!important;gap:14px!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:8px 2px 12px!important;align-items:stretch!important}
+  .popular-grid > .popular-card{display:flex!important;flex-direction:column!important;flex:0 0 145px!important;width:145px!important;min-width:145px!important;max-width:145px!important;scroll-snap-align:start;overflow:hidden;box-sizing:border-box}
+  .popular-grid > .popular-card img{display:block!important;width:100%!important;min-width:100%!important;height:110px!important;min-height:110px!important;max-height:110px!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:center!important;flex:none!important;border-radius:9px}
+  .popular-grid > .popular-card > span{display:block!important;padding:8px 2px 5px!important;font-size:17px!important;line-height:1.2!important;overflow-wrap:break-word}
+  .popular-grid > .popular-card > span small{display:block!important;margin-top:5px!important;font-size:12px!important;line-height:1.4!important}
+}
 </style></head><body>
 <header class="top"><div class="wrap nav"><div class="logo"><div class="logo-mark">♨️</div><div class="brand">New <b>Abhiruchi</b><br>Tiffins & Meals</div></div><nav class="links"><a href="#home">Home</a><a href="#tiffins">Tiffins</a><a href="#dosas">Dosas</a><a href="#meals">Meals</a><a href="#curries">Curries</a><a href="#sweets">Sweets & Snacks</a><a href="#dairy">Fresh Dairy</a><a href="#location">Location</a><a class="cart-top" href="#cartPanel" id="cartTop">🛒 Cart <span id="cartCount">0</span></a></nav></div></header>
 <main id="home">
