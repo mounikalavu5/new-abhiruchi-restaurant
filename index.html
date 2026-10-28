@@ -153,9 +153,53 @@ footer .wrap, footer .footer-inner{
   object-fit:cover!important;
   object-position:center!important;
 }
+
+/* Original Abhiruchi cinematic experience: progressive enhancement */
+.cinema{position:relative;min-height:92svh;overflow:hidden;isolation:isolate;background:#170b08;color:#fff;display:grid;place-items:center}
+.cinema-bg{position:absolute;inset:-8%;background:linear-gradient(90deg,rgba(21,7,3,.88),rgba(21,7,3,.26)),url('assets/meals.jpg') center/cover;transform:scale(1.1);will-change:transform}
+.cinema:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 48%,transparent 10%,#170b0859 75%);pointer-events:none}
+.cinema-inner{position:relative;z-index:2;width:min(1200px,92%);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4vw;padding:100px 0}
+.cinema-eyebrow{color:#f5d17b;letter-spacing:.28em;font-weight:800;text-transform:uppercase;font-size:12px}
+.cinema h1{font:clamp(50px,7vw,112px)/.95 Georgia,serif;letter-spacing:-.05em;margin:20px 0;text-wrap:balance}
+.cinema h1 em{color:#ffd66c;font-style:italic}
+.cinema-copy{font-size:clamp(16px,1.6vw,21px);line-height:1.65;max-width:520px;color:#fcebdc}
+.cinema-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.cinema-actions a{border-radius:50px;padding:15px 25px;font-weight:800;background:#ffd66c;color:#2d140a;transition:transform .25s,box-shadow .25s}
+.cinema-actions a:nth-child(2){background:transparent;color:#fff;border:1px solid #fff8}
+.cinema-actions a:hover{transform:translateY(-4px);box-shadow:0 12px 30px #0005}
+.cinema-stage{position:relative;min-height:490px;perspective:1100px;transform-style:preserve-3d}
+.cinema-dish{position:absolute;top:10%;left:12%;width:76%;aspect-ratio:1;border-radius:50%;object-fit:cover;border:13px solid #f9e9c9;box-shadow:0 35px 90px #000b,0 0 0 2px #d9a853;animation:ab-float 6s ease-in-out infinite;will-change:transform}
+.cinema-orbit{position:absolute;inset:1%;border:1px solid #ffe1a16e;border-radius:50%;transform:rotate(-24deg) scaleY(.75);pointer-events:none}
+.cinema-orbit:before,.cinema-orbit:after{content:"✦";position:absolute;color:#ffcf67;font-size:35px;left:10%;top:13%}.cinema-orbit:after{left:auto;top:auto;right:9%;bottom:10%;font-size:24px}
+.cinema-label{position:absolute;bottom:7%;right:0;background:#fff6df;color:#47220f;border-radius:18px;padding:14px 19px;box-shadow:0 12px 40px #0006;transform:rotate(5deg);font:800 17px Georgia,serif}
+.cinema-scroll{position:absolute;z-index:3;bottom:22px;left:50%;transform:translateX(-50%);letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:#ffe7bb}
+@keyframes ab-float{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-22px) rotate(4deg)}}
+.cat,.popular-card,.pop-card,.card{transition:transform .35s ease,box-shadow .35s ease;transform-style:preserve-3d}
+.cat:hover,.popular-card:hover,.pop-card:hover{transform:translateY(-8px) rotateX(3deg);box-shadow:0 18px 35px #3c25052b}
+.ab-reveal{opacity:0;transform:translateY(34px);transition:opacity .75s ease,transform .75s ease}.ab-reveal.ab-visible{opacity:1;transform:translateY(0)}
+@media(max-width:800px){.cinema{min-height:unset}.cinema-inner{grid-template-columns:1fr;padding:70px 0 75px;gap:8px}.cinema h1{font-size:clamp(49px,12vw,76px)}.cinema-stage{min-height:310px;width:min(390px,90%);margin:auto}.cinema-dish{border-width:9px}.cinema-label{font-size:14px}.cinema-scroll{bottom:12px}}
+@media(prefers-reduced-motion:reduce){.cinema-dish{animation:none}.ab-reveal{opacity:1;transform:none;transition:none}.cinema-bg{transform:none!important}.cat,.popular-card,.pop-card{transition:none}}
 </style></head><body>
 <header class="top"><div class="wrap nav"><div class="logo"><div class="logo-mark">♨️</div><div class="brand">New <b>Abhiruchi</b><br>Tiffins & Meals</div></div><nav class="links"><a href="#home">Home</a><a href="#tiffins">Tiffins</a><a href="#dosas">Dosas</a><a href="#meals">Meals</a><a href="#curries">Curries</a><a href="#sweets">Sweets & Snacks</a><a href="#dairy">Fresh Dairy</a><a href="#location">Location</a><a class="cart-top" href="#cartPanel" id="cartTop">🛒 Cart <span id="cartCount">0</span></a></nav></div></header>
-<main id="home"><section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Authentic Andhra</div><h1>Tiffins & Meals</h1><div class="special">Aritaku Ghee Garam Idly<br>& Fish Curry - Our Specialties</div></div></div><div class="tagline">Fresh<br>Tasty<br>Homely Food<br>Every Day</div><div class="features"><div class="feature"><i>🌿</i>Fresh<br>Ingredients</div><div class="feature"><i>🏠</i>Homely<br>Taste</div><div class="feature"><i>🍲</i>Wide Variety<br>of Tiffins, Dosas & Meals</div><div class="feature"><i>₹</i>Affordable<br>Prices</div></div><div class="hero-actions"><a class="hero-btn call" href="tel:+918801689111">☎ Call to Order<br>8801689111</a><a class="hero-btn map" target="_blank" rel="noopener" href="https://maps.app.goo.gl/AZSiE7xexVKewxK49?g_st=iw">📍 Get Directions<br><small>View on Google Maps</small></a></div></section>
+<main id="home">
+<section class="cinema" aria-label="Discover New Abhiruchi">
+ <div class="cinema-bg" aria-hidden="true"></div>
+ <div class="cinema-inner">
+  <div class="cinema-text">
+   <div class="cinema-eyebrow">From our kitchen, with love · Andhra Pradesh</div>
+   <h1>A taste of <em>home.</em></h1>
+   <p class="cinema-copy">Hot idlis. Golden ghee. Bold Andhra flavors. Every meal tells a story — and yours begins here.</p>
+   <div class="cinema-actions"><a href="#tiffins">Explore our menu ↓</a><a href="tel:+918801689111">Call to order ☎</a></div>
+  </div>
+  <div class="cinema-stage" aria-label="Delicious Andhra food">
+   <div class="cinema-orbit" aria-hidden="true"></div>
+   <img class="cinema-dish" src="assets/popular-aritaku-idli.jpg" alt="Aritaku Idli, a New Abhiruchi specialty" fetchpriority="high">
+   <div class="cinema-label">Aritaku Ghee Garam Idly ✦</div>
+  </div>
+ </div>
+ <a class="cinema-scroll" href="#popular">Scroll to discover ↓</a>
+</section>
+<section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Authentic Andhra</div><h1>Tiffins & Meals</h1><div class="special">Aritaku Ghee Garam Idly<br>& Fish Curry - Our Specialties</div></div></div><div class="tagline">Fresh<br>Tasty<br>Homely Food<br>Every Day</div><div class="features"><div class="feature"><i>🌿</i>Fresh<br>Ingredients</div><div class="feature"><i>🏠</i>Homely<br>Taste</div><div class="feature"><i>🍲</i>Wide Variety<br>of Tiffins, Dosas & Meals</div><div class="feature"><i>₹</i>Affordable<br>Prices</div></div><div class="hero-actions"><a class="hero-btn call" href="tel:+918801689111">☎ Call to Order<br>8801689111</a><a class="hero-btn map" target="_blank" rel="noopener" href="https://maps.app.goo.gl/AZSiE7xexVKewxK49?g_st=iw">📍 Get Directions<br><small>View on Google Maps</small></a></div></section>
 <section class="categories"><a class="cat" href="#tiffins"><img src="assets/tiffins.jpg" alt="Idli and chutneys"><span>Tiffins</span></a><a class="cat" href="#dosas"><img src="assets/dosas.jpg" alt="Dosa"><span>Dosas</span></a><a class="cat" href="#meals"><img src="assets/meals.jpg" alt="Andhra meals"><span>Meals</span></a><a class="cat" href="#curries"><img src="assets/curries.jpg" alt="Curry"><span>Curries</span></a><a class="cat" href="#sweets"><img src="assets/sweets.jpg" alt="Sweets and snacks"><span>Sweets & Snacks</span></a><a class="cat" href="#dairy"><img src="assets/dairy.jpg" alt="Milk and curd"><span>Fresh Dairy</span></a></section>
 <section class="popular" id="popular">
 <h2>Popular Tiffins</h2>
@@ -236,4 +280,27 @@ footer .wrap, footer .footer-inner{
 })();
 </script>
 
+
+<script>
+(function(){
+  var scene=document.querySelector('.cinema'),bg=document.querySelector('.cinema-bg'),dish=document.querySelector('.cinema-dish');
+  if(!scene)return;
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduced){
+    var pending=false;
+    function animate(){
+      var rect=scene.getBoundingClientRect(),p=Math.max(0,Math.min(1,-rect.top/Math.max(1,rect.height)));
+      if(bg)bg.style.transform='translate3d(0,'+(p*75)+'px,0) scale(1.12)';
+      if(dish)dish.style.filter='saturate('+(1+p*.15)+')';
+      pending=false;
+    }
+    window.addEventListener('scroll',function(){if(!pending){pending=true;requestAnimationFrame(animate)}},{passive:true});
+    animate();
+  }
+  if('IntersectionObserver' in window&&!reduced){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ab-visible');io.unobserve(e.target)}})},{threshold:.07});
+    document.querySelectorAll('.categories,.popular,.menu-title').forEach(function(el){el.classList.add('ab-reveal');io.observe(el)});
+  }
+})();
+</script>
 </body></html>
